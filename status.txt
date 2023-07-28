@@ -1,0 +1,6 @@
+2464927P Status report
+
+Attempted all parts of the exercise
+Did not attempt extra credit
+
+Fully Works with all examples apart from the ones that have recursion, which cause an infinite loop

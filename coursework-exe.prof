@@ -1,0 +1,850 @@
+	Thu Dec  1 17:39 2022 Time and Allocation Profiling Report  (Final)
+
+	   coursework-exe +RTS -N -p -RTS -e spiral
+
+	total time  =        0.46 secs   (1714 ticks @ 1000 us, 8 processors)
+	total alloc = 3,304,773,440 bytes  (excludes profiling overheads)
+
+COST CENTRE            MODULE    SRC                            %time %alloc
+
+evalExpr               Interp    src/Interp.hs:(83,1)-(133,32)   42.8   31.1
+lookupVar.mvalue       Interp    src/Interp.hs:66:21-50          11.1    1.5
+lookupDef.mdef         Interp    src/Interp.hs:73:5-44            6.0    0.7
+evalExpr.(...)         Interp    src/Interp.hs:(97,5)-(99,45)     5.4    8.2
+evalExpr.(...).\       Interp    src/Interp.hs:89:43-93           3.6    7.5
+addInstruction         Interp    src/Interp.hs:(52,1)-(54,34)     3.5    9.0
+evalBinOp              Interp    src/Interp.hs:(30,1)-(48,36)     3.4    4.5
+evalExpr.(...)         Interp    src/Interp.hs:133:5-32           2.6    3.7
+evalExpr.(...)         Interp    src/Interp.hs:124:5-30           2.6    7.1
+evalExpr.(...)         Interp    src/Interp.hs:132:5-32           2.0    5.2
+bindValues             Interp    src/Interp.hs:(76,1)-(79,49)     1.5    1.9
+bind.newEnv            Interp    src/Interp.hs:59:5-34            1.3    4.9
+evalExpr.variables     Interp    src/Interp.hs:90:5-44            1.2    2.2
+bind                   Interp    src/Interp.hs:(57,1)-(59,34)     1.2    0.0
+lookupVar              Interp    src/Interp.hs:(62,1)-(66,50)     1.2    0.0
+evalExpr.boundSt       Interp    src/Interp.hs:91:5-47            1.1    1.5
+evalExpr.(...)         Interp    src/Interp.hs:93:5-39            1.1    1.1
+evalExpr.(...)         Interp    src/Interp.hs:89:5-108           1.0    1.1
+bindValues.inState     Interp    src/Interp.hs:78:5-36            1.0    1.5
+bindValues.newState    Interp    src/Interp.hs:79:5-49            0.9    1.5
+evalExpr.(...).\.(...) Interp    src/Interp.hs:89:47-71           0.7    3.4
+
+
+                                                                                                                                                                          individual      inherited
+COST CENTRE                                        MODULE                               SRC                                                          no.       entries  %time %alloc   %time %alloc
+
+MAIN                                               MAIN                                 <built-in>                                                   23255           0    0.1    0.0   100.0  100.0
+ CAF                                               GHC.Conc.Signal                      <entire-module>                                              23374           0    0.0    0.0     0.0    0.0
+ CAF                                               GHC.IO.Encoding                      <entire-module>                                              23355           0    0.0    0.0     0.0    0.0
+ CAF                                               GHC.IO.Encoding.Iconv                <entire-module>                                              23353           0    0.0    0.0     0.0    0.0
+ CAF                                               GHC.IO.Exception                     <entire-module>                                              23347           0    0.0    0.0     0.0    0.0
+ CAF                                               GHC.IO.Handle.FD                     <entire-module>                                              23344           0    0.1    0.0     0.1    0.0
+ CAF                                               GHC.TopHandler                       <entire-module>                                              23317           0    0.0    0.0     0.0    0.0
+ CAF                                               GHC.Event.Thread                     <entire-module>                                              23290           0    0.0    0.0     0.0    0.0
+ CAF                                               GHC.Event.Poll                       <entire-module>                                              23276           0    0.0    0.0     0.0    0.0
+ CAF:$fAlternativeParser4                          Options.Applicative.Types            <no location info>                                           45261           0    0.0    0.0     0.0    0.0
+  return                                           Options.Applicative.Types            src/Options/Applicative/Types.hs:276:3-15                    46884           1    0.0    0.0     0.0    0.0
+ CAF:$fAlternativeParser_$c<|>                     Options.Applicative.Types            src/Options/Applicative/Types.hs:304:3-7                     45266           0    0.0    0.0     0.0    0.0
+  <|>                                              Options.Applicative.Types            src/Options/Applicative/Types.hs:304:3-14                    46589           1    0.0    0.0     0.0    0.0
+ CAF:$fAlternativeParser_$cempty                   Options.Applicative.Types            src/Options/Applicative/Types.hs:303:3-7                     45265           0    0.0    0.0     0.0    0.0
+  empty                                            Options.Applicative.Types            src/Options/Applicative/Types.hs:303:3-22                    47026           1    0.0    0.0     0.0    0.0
+ CAF:$fAlternativeParser_$cmany                    Options.Applicative.Types            src/Options/Applicative/Types.hs:305:3-6                     45270           0    0.0    0.0     0.0    0.0
+  many                                             Options.Applicative.Types            src/Options/Applicative/Types.hs:305:3-22                    46819           1    0.0    0.0     0.0    0.0
+ CAF:$fAlternativeParser_$cpure                    Options.Applicative.Types            src/Options/Applicative/Types.hs:269:3-6                     45267           0    0.0    0.0     0.0    0.0
+  pure                                             Options.Applicative.Types            src/Options/Applicative/Types.hs:269:3-20                    46764           1    0.0    0.0     0.0    0.0
+ CAF:$fApplicativeParser_$c<*>                     Options.Applicative.Types            src/Options/Applicative/Types.hs:270:3-7                     45268           0    0.0    0.0     0.0    0.0
+  <*>                                              Options.Applicative.Types            src/Options/Applicative/Types.hs:270:3-15                    46609           1    0.0    0.0     0.0    0.0
+ CAF:$fMonadPP3                                    Options.Applicative.Internal         <no location info>                                           45164           0    0.0    0.0     0.0    0.0
+  getPrefs                                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:78:3-34                  46529           1    0.0    0.0     0.0    0.0
+ CAF:$fMonadP_$creturn                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:63:3-8                   45169           0    0.0    0.0     0.0    0.0
+  return                                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:63:3-15                  46696           1    0.0    0.0     0.0    0.0
+ CAF:$fMonoidDefaultProp_$cmempty                  Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:93:3-8           45388           0    0.0    0.0     0.0    0.0
+  mempty                                           Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:93:3-38          46656           1    0.0    0.0     0.0    0.0
+ CAF:$fMonoidMod_$cmappend                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:137:3-9          45391           0    0.0    0.0     0.0    0.0
+  mappend                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:137:3-16         46647           1    0.0    0.0     0.0    0.0
+ CAF:$fMonoidPrefsMod1                             Options.Applicative.Builder          <no location info>                                           45415           0    0.0    0.0     0.0    0.0
+  mempty                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:469:3-22                  46543           1    0.0    0.0     0.0    0.0
+ CAF:defaultPrefs                                  Options.Applicative.Builder          src/Options/Applicative/Builder.hs:547:1-12                  45461           0    0.0    0.0     0.0    0.0
+  defaultPrefs                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:547:1-24                  46538           1    0.0    0.0     0.0    0.0
+   prefs                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(527,1)-(537,36)          46539           1    0.0    0.0     0.0    0.0
+    applyPrefsMod                                  Options.Applicative.Builder          src/Options/Applicative/Builder.hs:466:5-17                  46540           1    0.0    0.0     0.0    0.0
+    prefs.base                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(529,5)-(537,36)          46545           1    0.0    0.0     0.0    0.0
+ CAF:defaultPrefs3                                 Options.Applicative.Builder          <no location info>                                           45460           0    0.0    0.0     0.0    0.0
+  defaultPrefs                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:547:1-24                  46541           0    0.0    0.0     0.0    0.0
+   idm                                             Options.Applicative.Builder          src/Options/Applicative/Builder.hs:543:1-12                  46542           1    0.0    0.0     0.0    0.0
+ CAF:ds14_r9i5                                     Main                                 <no location info>                                           46476           0    0.0    0.0     0.0    0.0
+  testParser                                       Main                                 app/Main.hs:(23,1)-(28,5)                                    47051           0    0.0    0.0     0.0    0.0
+   help                                            Options.Applicative.Builder          src/Options/Applicative/Builder.hs:190:1-55                  47052           1    0.0    0.0     0.0    0.0
+ CAF:ds15_r9i9                                     Main                                 <no location info>                                           46478           0    0.0    0.0     0.0    0.0
+  testParser                                       Main                                 app/Main.hs:(23,1)-(28,5)                                    47049           0    0.0    0.0     0.0    0.0
+   metavar                                         Options.Applicative.Builder          src/Options/Applicative/Builder.hs:206:1-55                  47050           1    0.0    0.0     0.0    0.0
+ CAF:ds16_r9ia                                     Main                                 <no location info>                                           46479           0    0.0    0.0     0.0    0.0
+  testParser                                       Main                                 app/Main.hs:(23,1)-(28,5)                                    47047           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47048           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47056           1    0.0    0.0     0.0    0.0
+ CAF:ds17_r9ie                                     Main                                 <no location info>                                           46481           0    0.0    0.0     0.0    0.0
+  testParser                                       Main                                 app/Main.hs:(23,1)-(28,5)                                    47044           0    0.0    0.0     0.0    0.0
+   short                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:162:1-34                  47045           1    0.0    0.0     0.0    0.0
+    fieldMod                                       Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         47046           1    0.0    0.0     0.0    0.0
+ CAF:ds18_r9if                                     Main                                 <no location info>                                           46482           0    0.0    0.0     0.0    0.0
+  testParser                                       Main                                 app/Main.hs:(23,1)-(28,5)                                    47042           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47043           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47055           1    0.0    0.0     0.0    0.0
+ CAF:ds19_r9in                                     Main                                 <no location info>                                           46485           0    0.0    0.0     0.0    0.0
+  testParser                                       Main                                 app/Main.hs:(23,1)-(28,5)                                    47039           0    0.0    0.0     0.0    0.0
+   long                                            Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  47040           1    0.0    0.0     0.0    0.0
+    fieldMod                                       Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         47041           1    0.0    0.0     0.0    0.0
+ CAF:ds20_r9iu                                     Main                                 <no location info>                                           46490           0    0.0    0.0     0.0    0.0
+  testEvaluator                                    Main                                 app/Main.hs:(31,1)-(36,5)                                    47096           0    0.0    0.0     0.0    0.0
+   help                                            Options.Applicative.Builder          src/Options/Applicative/Builder.hs:190:1-55                  47097           1    0.0    0.0     0.0    0.0
+ CAF:ds21_r9iy                                     Main                                 <no location info>                                           46492           0    0.0    0.0     0.0    0.0
+  testEvaluator                                    Main                                 app/Main.hs:(31,1)-(36,5)                                    47094           0    0.0    0.0     0.0    0.0
+   metavar                                         Options.Applicative.Builder          src/Options/Applicative/Builder.hs:206:1-55                  47095           1    0.0    0.0     0.0    0.0
+ CAF:ds22_r9iz                                     Main                                 <no location info>                                           46493           0    0.0    0.0     0.0    0.0
+  testEvaluator                                    Main                                 app/Main.hs:(31,1)-(36,5)                                    47092           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47093           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47101           1    0.0    0.0     0.0    0.0
+ CAF:ds23_r9iD                                     Main                                 <no location info>                                           46495           0    0.0    0.0     0.0    0.0
+  testEvaluator                                    Main                                 app/Main.hs:(31,1)-(36,5)                                    47089           0    0.0    0.0     0.0    0.0
+   short                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:162:1-34                  47090           1    0.0    0.0     0.0    0.0
+    fieldMod                                       Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         47091           1    0.0    0.0     0.0    0.0
+ CAF:ds24_r9iE                                     Main                                 <no location info>                                           46496           0    0.0    0.0     0.0    0.0
+  testEvaluator                                    Main                                 app/Main.hs:(31,1)-(36,5)                                    47087           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47088           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47100           1    0.0    0.0     0.0    0.0
+ CAF:ds25_r9iM                                     Main                                 <no location info>                                           46499           0    0.0    0.0     0.0    0.0
+  testEvaluator                                    Main                                 app/Main.hs:(31,1)-(36,5)                                    47084           0    0.0    0.0     0.0    0.0
+   long                                            Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  47085           1    0.0    0.0     0.0    0.0
+    fieldMod                                       Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         47086           1    0.0    0.0     0.0    0.0
+ CAF:emptySt                                       Typecheck                            src/Typecheck.hs:71:1-7                                      46025           0    0.0    0.0     0.0    0.0
+  emptySt                                          Typecheck                            src/Typecheck.hs:71:1-28                                     47206           1    0.0    0.0     0.0    0.0
+ CAF:eta_r9iS                                      Main                                 <no location info>                                           46505           0    0.0    0.0     0.0    0.0
+  optsInfo                                         Main                                 app/Main.hs:(114,1)-(118,5)                                  46581           0    0.0    0.0     0.0    0.0
+   info                                            Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(454,1)-(463,34)          46582           0    0.0    0.0     0.0    0.0
+    info.base                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(456,5)-(463,34)          46583           1    0.0    0.0     0.0    0.0
+ CAF:examples                                      Examples                             src/Examples.hs:40:1-8                                       46349           0    0.0    0.0     0.0    0.0
+  examples                                         Examples                             src/Examples.hs:(40,1)-(48,5)                                47182           1    0.0    0.0     0.0    0.0
+ CAF:examples12                                    Examples                             <no location info>                                           46347           0    0.0    0.0     0.0    0.0
+ CAF:examples15                                    Examples                             <no location info>                                           46346           0    0.0    0.0     0.0    0.0
+ CAF:examples18                                    Examples                             <no location info>                                           46345           0    0.0    0.0     0.0    0.0
+ CAF:examples21                                    Examples                             <no location info>                                           46344           0    0.0    0.0     0.0    0.0
+ CAF:examples24                                    Examples                             <no location info>                                           46343           0    0.0    0.0     0.0    0.0
+ CAF:examples9                                     Examples                             <no location info>                                           46348           0    0.0    0.0     0.0    0.0
+ CAF:execParser1                                   Options.Applicative.Extra            <no location info>                                           45382           0    0.0    0.0     0.0    0.0
+  execParser                                       Options.Applicative.Extra            src/Options/Applicative/Extra.hs:84:1-42                     46512           1    0.0    0.0     0.0    0.0
+ CAF:f1_r9gK                                       Main                                 <no location info>                                           46427           0    0.0    0.0     0.0    0.0
+  optsInfo                                         Main                                 app/Main.hs:(114,1)-(118,5)                                  46559           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder          src/Options/Applicative/Builder.hs:386:3-56                  46560           0    0.0    0.0     0.0    0.0
+    applyInfoMod                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:379:5-16                  46561           1    0.0    0.0     0.0    0.0
+ CAF:f_r9gD                                        Main                                 <no location info>                                           46423           0    0.0    0.0     0.0    0.0
+  optsInfo                                         Main                                 app/Main.hs:(114,1)-(118,5)                                  46562           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder          src/Options/Applicative/Builder.hs:386:3-56                  46563           0    0.0    0.0     0.0    0.0
+    applyInfoMod                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:379:5-16                  46564           1    0.0    0.0     0.0    0.0
+ CAF:fullDesc1                                     Options.Applicative.Builder          <no location info>                                           45435           0    0.0    0.0     0.0    0.0
+  fullDesc                                         Options.Applicative.Builder          src/Options/Applicative/Builder.hs:390:1-52                  46578           1    0.0    0.0     0.0    0.0
+ CAF:g1_r9gI                                       Main                                 <no location info>                                           46426           0    0.0    0.0     0.0    0.0
+  optsInfo                                         Main                                 app/Main.hs:(114,1)-(118,5)                                  46567           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder          src/Options/Applicative/Builder.hs:386:3-56                  46568           0    0.0    0.0     0.0    0.0
+    applyInfoMod                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:379:5-16                  46569           1    0.0    0.0     0.0    0.0
+ CAF:g_r9gy                                        Main                                 <no location info>                                           46420           0    0.0    0.0     0.0    0.0
+  optsInfo                                         Main                                 app/Main.hs:(114,1)-(118,5)                                  46575           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder          src/Options/Applicative/Builder.hs:386:3-56                  46576           0    0.0    0.0     0.0    0.0
+    applyInfoMod                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:379:5-16                  46577           1    0.0    0.0     0.0    0.0
+ CAF:internal                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:189:1-8          45393           0    0.0    0.0     0.0    0.0
+  internal                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:189:1-60         46653           1    0.0    0.0     0.0    0.0
+ CAF:liftOpt                                       Options.Applicative.Common           src/Options/Applicative/Common.hs:81:1-7                     45384           0    0.0    0.0     0.0    0.0
+  liftOpt                                          Options.Applicative.Common           src/Options/Applicative/Common.hs:81:1-14                    46660           1    0.0    0.0     0.0    0.0
+ CAF:lvl136_rJAj                                   Options.Applicative.BashCompletion   <no location info>                                           45109           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46649           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46650           0    0.0    0.0     0.0    0.0
+    long                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  46651           1    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46652           1    0.0    0.0     0.0    0.0
+ CAF:lvl139_rJAm                                   Options.Applicative.BashCompletion   <no location info>                                           45111           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46645           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46646           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46648           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46655           1    0.0    0.0     0.0    0.0
+    flag'                                          Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(327,1)-(331,43)          46657           1    0.0    0.0     0.0    0.0
+     flag'.rdr                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(329,5)-(331,43)          46669           1    0.0    0.0     0.0    0.0
+      flag'.rdr.fields                             Options.Applicative.Builder          src/Options/Applicative/Builder.hs:329:15-45                 46671           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46672           0    0.0    0.0     0.0    0.0
+        fieldMod                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46674           0    0.0    0.0     0.0    0.0
+         name                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:58:3-61          46675           1    0.0    0.0     0.0    0.0
+          flagNames                                Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:41:5-13          46686           1    0.0    0.0     0.0    0.0
+      flagActive                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:42:5-14          46670           1    0.0    0.0     0.0    0.0
+      flagNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:41:5-13          46684           1    0.0    0.0     0.0    0.0
+     mkParser                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 46658           1    0.0    0.0     0.0    0.0
+      mkParser.o                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         46659           1    0.0    0.0     0.0    0.0
+       mkOption                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         46666           1    0.0    0.0     0.0    0.0
+ CAF:lvl142_rJAu                                   Options.Applicative.BashCompletion   <no location info>                                           45115           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46735           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46736           0    0.0    0.0     0.0    0.0
+    long                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  46737           1    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46738           1    0.0    0.0     0.0    0.0
+ CAF:lvl143_rJAv                                   Options.Applicative.BashCompletion   <no location info>                                           45116           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46732           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46733           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46734           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46742           1    0.0    0.0     0.0    0.0
+ CAF:lvl148_rJAA                                   Options.Applicative.BashCompletion   <no location info>                                           45117           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46729           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46730           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46731           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46741           1    0.0    0.0     0.0    0.0
+    value                                          Options.Applicative.Builder          src/Options/Applicative/Builder.hs:178:1-50                  46739           1    0.0    0.0     0.0    0.0
+ CAF:lvl149_rJAB                                   Options.Applicative.BashCompletion   <no location info>                                           45118           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46720           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46721           0    0.0    0.0     0.0    0.0
+    option                                         Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          46722           1    0.0    0.0     0.0    0.0
+     mkParser                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 46743           1    0.0    0.0     0.0    0.0
+      mkParser.\                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:169:20-31        46744           1    0.0    0.0     0.0    0.0
+      mkParser.o                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         46745           1    0.0    0.0     0.0    0.0
+       mkOption                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         46746           1    0.0    0.0     0.0    0.0
+     option.(...)                                  Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46724           1    0.0    0.0     0.0    0.0
+      <>                                           Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46725           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46740           1    0.0    0.0     0.0    0.0
+     option.d                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46723           1    0.0    0.0     0.0    0.0
+     option.f                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46749           1    0.0    0.0     0.0    0.0
+     option.fields                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  46750           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46751           0    0.0    0.0     0.0    0.0
+       option.(...)                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46752           0    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46753           0    0.0    0.0     0.0    0.0
+     option.rdr                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  46747           1    0.0    0.0     0.0    0.0
+      optNames                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46748           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46754           0    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46756           0    0.0    0.0     0.0    0.0
+      name                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          46757           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46758           1    0.0    0.0     0.0    0.0
+ CAF:lvl150_rJAC                                   Options.Applicative.BashCompletion   <no location info>                                           45119           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46643           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46644           0    0.0    0.0     0.0    0.0
+ CAF:lvl152_rJAJ                                   Options.Applicative.BashCompletion   <no location info>                                           45122           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46791           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46792           0    0.0    0.0     0.0    0.0
+    long                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  46793           1    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46794           1    0.0    0.0     0.0    0.0
+ CAF:lvl153_rJAK                                   Options.Applicative.BashCompletion   <no location info>                                           45123           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46788           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46789           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46790           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46798           1    0.0    0.0     0.0    0.0
+ CAF:lvl154_rJAL                                   Options.Applicative.BashCompletion   <no location info>                                           45124           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46785           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46786           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46787           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46797           1    0.0    0.0     0.0    0.0
+    value                                          Options.Applicative.Builder          src/Options/Applicative/Builder.hs:178:1-50                  46795           1    0.0    0.0     0.0    0.0
+ CAF:lvl155_rJAM                                   Options.Applicative.BashCompletion   <no location info>                                           45125           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46779           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46780           0    0.0    0.0     0.0    0.0
+    option                                         Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          46781           1    0.0    0.0     0.0    0.0
+     mkParser                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 46799           1    0.0    0.0     0.0    0.0
+      mkParser.\                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:169:20-31        46800           1    0.0    0.0     0.0    0.0
+      mkParser.o                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         46801           1    0.0    0.0     0.0    0.0
+       mkOption                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         46802           1    0.0    0.0     0.0    0.0
+     option.(...)                                  Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46783           1    0.0    0.0     0.0    0.0
+      <>                                           Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46784           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46796           1    0.0    0.0     0.0    0.0
+     option.d                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46782           1    0.0    0.0     0.0    0.0
+     option.f                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46805           1    0.0    0.0     0.0    0.0
+     option.fields                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  46806           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46807           0    0.0    0.0     0.0    0.0
+       option.(...)                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46808           0    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46809           0    0.0    0.0     0.0    0.0
+     option.rdr                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  46803           1    0.0    0.0     0.0    0.0
+      optNames                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46804           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46810           0    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46812           0    0.0    0.0     0.0    0.0
+      name                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          46813           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46814           1    0.0    0.0     0.0    0.0
+ CAF:lvl156_rJAN                                   Options.Applicative.BashCompletion   <no location info>                                           45126           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46641           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46642           0    0.0    0.0     0.0    0.0
+ CAF:lvl157_rJAO                                   Options.Applicative.BashCompletion   <no location info>                                           45127           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46815           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46816           0    0.0    0.0     0.0    0.0
+ CAF:lvl158_rJAP                                   Options.Applicative.BashCompletion   <no location info>                                           45128           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46633           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46634           0    0.0    0.0     0.0    0.0
+ CAF:lvl161_rJAX                                   Options.Applicative.BashCompletion   <no location info>                                           45131           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46843           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46844           0    0.0    0.0     0.0    0.0
+    long                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  46845           1    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46846           1    0.0    0.0     0.0    0.0
+ CAF:lvl162_rJAY                                   Options.Applicative.BashCompletion   <no location info>                                           45132           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46840           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46841           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46842           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46848           1    0.0    0.0     0.0    0.0
+ CAF:lvl163_rJAZ                                   Options.Applicative.BashCompletion   <no location info>                                           45133           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46833           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46834           0    0.0    0.0     0.0    0.0
+    strOption                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:360:1-22                  46835           1    0.0    0.0     0.0    0.0
+     option                                        Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          46836           1    0.0    0.0     0.0    0.0
+      mkParser                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 46849           1    0.0    0.0     0.0    0.0
+       mkParser.o                                  Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         46850           1    0.0    0.0     0.0    0.0
+        mkOption                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         46852           1    0.0    0.0     0.0    0.0
+      option.(...)                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46838           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46839           1    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46847           1    0.0    0.0     0.0    0.0
+      option.d                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46837           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46856           1    0.0    0.0     0.0    0.0
+      option.fields                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  46857           1    0.0    0.0     0.0    0.0
+       option.f                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46858           0    0.0    0.0     0.0    0.0
+        option.(...)                               Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46859           0    0.0    0.0     0.0    0.0
+         <>                                        Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46860           0    0.0    0.0     0.0    0.0
+      option.rdr                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  46854           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46855           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46861           0    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46863           0    0.0    0.0     0.0    0.0
+      name                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          46864           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46865           1    0.0    0.0     0.0    0.0
+ CAF:lvl164_rJB0                                   Options.Applicative.BashCompletion   <no location info>                                           45134           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46817           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46818           0    0.0    0.0     0.0    0.0
+    many                                           Options.Applicative.Types            src/Options/Applicative/Types.hs:305:3-22                    46820           0    0.0    0.0     0.0    0.0
+     fromM                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:287:1-26                    46823           1    0.0    0.0     0.0    0.0
+      manyM                                        Options.Applicative.Types            src/Options/Applicative/Types.hs:(293,1)-(297,30)            46824           0    0.0    0.0     0.0    0.0
+       >>=                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:277:3-64                    46825           0    0.0    0.0     0.0    0.0
+        >>=.\                                      Options.Applicative.Types            src/Options/Applicative/Types.hs:277:37-64                   46826           1    0.0    0.0     0.0    0.0
+         >>=.\.\                                   Options.Applicative.Types            src/Options/Applicative/Types.hs:277:46-63                   46879           0    0.0    0.0     0.0    0.0
+          pure                                     Options.Applicative.Types            src/Options/Applicative/Types.hs:283:3-30                    46886           0    0.0    0.0     0.0    0.0
+           pure.\                                  Options.Applicative.Types            src/Options/Applicative/Types.hs:283:28-30                   46887           1    0.0    0.0     0.0    0.0
+     manyM                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:(293,1)-(297,30)            46821           1    0.0    0.0     0.0    0.0
+      >>=                                          Options.Applicative.Types            src/Options/Applicative/Types.hs:277:3-64                    46822           1    0.0    0.0     0.0    0.0
+      fmap                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            46832           1    0.0    0.0     0.0    0.0
+       fmap                                        Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    46851           1    0.0    0.0     0.0    0.0
+        fmap                                       Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            46853           1    0.0    0.0     0.0    0.0
+      oneM                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:290:1-26                    46827           1    0.0    0.0     0.0    0.0
+ CAF:lvl166_rJB7                                   Options.Applicative.BashCompletion   <no location info>                                           45137           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46897           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46898           0    0.0    0.0     0.0    0.0
+    long                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  46899           1    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46900           1    0.0    0.0     0.0    0.0
+ CAF:lvl167_rJB8                                   Options.Applicative.BashCompletion   <no location info>                                           45138           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46894           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46895           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46896           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46902           1    0.0    0.0     0.0    0.0
+ CAF:lvl168_rJB9                                   Options.Applicative.BashCompletion   <no location info>                                           45139           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46888           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46889           0    0.0    0.0     0.0    0.0
+    option                                         Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          46890           1    0.0    0.0     0.0    0.0
+     mkParser                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 46903           1    0.0    0.0     0.0    0.0
+      mkParser.o                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         46904           1    0.0    0.0     0.0    0.0
+       mkOption                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         46905           1    0.0    0.0     0.0    0.0
+     option.(...)                                  Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46892           1    0.0    0.0     0.0    0.0
+      <>                                           Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46893           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46901           1    0.0    0.0     0.0    0.0
+     option.d                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46891           1    0.0    0.0     0.0    0.0
+     option.f                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46908           1    0.0    0.0     0.0    0.0
+     option.fields                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  46909           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46910           0    0.0    0.0     0.0    0.0
+       option.(...)                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46911           0    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46912           0    0.0    0.0     0.0    0.0
+     option.rdr                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  46906           1    0.0    0.0     0.0    0.0
+      optNames                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46907           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46913           0    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46915           0    0.0    0.0     0.0    0.0
+      name                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          46916           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46917           1    0.0    0.0     0.0    0.0
+ CAF:lvl170_rJBg                                   Options.Applicative.BashCompletion   <no location info>                                           45142           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46930           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46931           0    0.0    0.0     0.0    0.0
+    long                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  46932           1    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46933           1    0.0    0.0     0.0    0.0
+ CAF:lvl171_rJBh                                   Options.Applicative.BashCompletion   <no location info>                                           45143           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46927           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46928           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46929           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46935           1    0.0    0.0     0.0    0.0
+ CAF:lvl172_rJBi                                   Options.Applicative.BashCompletion   <no location info>                                           45144           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46920           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46921           0    0.0    0.0     0.0    0.0
+    fmap                                           Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            46938           2    0.0    0.0     0.0    0.0
+     fmap                                          Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    46939           2    0.0    0.0     0.0    0.0
+      fmap                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            46941           2    0.0    0.0     0.0    0.0
+    strOption                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:360:1-22                  46922           1    0.0    0.0     0.0    0.0
+     option                                        Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          46923           1    0.0    0.0     0.0    0.0
+      mkParser                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 46936           1    0.0    0.0     0.0    0.0
+       mkParser.o                                  Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         46937           1    0.0    0.0     0.0    0.0
+        mkOption                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         46940           1    0.0    0.0     0.0    0.0
+      option.(...)                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46925           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46926           1    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46934           1    0.0    0.0     0.0    0.0
+      option.d                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46924           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46944           1    0.0    0.0     0.0    0.0
+      option.fields                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  46945           1    0.0    0.0     0.0    0.0
+       option.f                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46946           0    0.0    0.0     0.0    0.0
+        option.(...)                               Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46947           0    0.0    0.0     0.0    0.0
+         <>                                        Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46948           0    0.0    0.0     0.0    0.0
+      option.rdr                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  46942           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46943           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46949           0    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46951           0    0.0    0.0     0.0    0.0
+      name                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          46952           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46953           1    0.0    0.0     0.0    0.0
+ CAF:lvl174_rJBq                                   Options.Applicative.BashCompletion   <no location info>                                           45147           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46966           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46967           0    0.0    0.0     0.0    0.0
+    long                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  46968           1    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46969           1    0.0    0.0     0.0    0.0
+ CAF:lvl175_rJBr                                   Options.Applicative.BashCompletion   <no location info>                                           45148           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46963           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46964           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46965           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46971           1    0.0    0.0     0.0    0.0
+ CAF:lvl176_rJBs                                   Options.Applicative.BashCompletion   <no location info>                                           45149           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46956           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46957           0    0.0    0.0     0.0    0.0
+    fmap                                           Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            46974           2    0.0    0.0     0.0    0.0
+     fmap                                          Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    46975           2    0.0    0.0     0.0    0.0
+      fmap                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            46977           2    0.0    0.0     0.0    0.0
+    strOption                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:360:1-22                  46958           1    0.0    0.0     0.0    0.0
+     option                                        Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          46959           1    0.0    0.0     0.0    0.0
+      mkParser                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 46972           1    0.0    0.0     0.0    0.0
+       mkParser.o                                  Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         46973           1    0.0    0.0     0.0    0.0
+        mkOption                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         46976           1    0.0    0.0     0.0    0.0
+      option.(...)                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46961           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46962           1    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   46970           1    0.0    0.0     0.0    0.0
+      option.d                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46960           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46980           1    0.0    0.0     0.0    0.0
+      option.fields                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  46981           1    0.0    0.0     0.0    0.0
+       option.f                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46982           0    0.0    0.0     0.0    0.0
+        option.(...)                               Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46983           0    0.0    0.0     0.0    0.0
+         <>                                        Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46984           0    0.0    0.0     0.0    0.0
+      option.rdr                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  46978           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46979           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46985           0    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         46987           0    0.0    0.0     0.0    0.0
+      name                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          46988           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          46989           1    0.0    0.0     0.0    0.0
+ CAF:lvl178_rJBA                                   Options.Applicative.BashCompletion   <no location info>                                           45152           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      47002           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      47003           0    0.0    0.0     0.0    0.0
+    long                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:166:1-32                  47004           1    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         47005           1    0.0    0.0     0.0    0.0
+ CAF:lvl179_rJBB                                   Options.Applicative.BashCompletion   <no location info>                                           45153           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46999           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      47000           0    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47001           1    0.0    0.0     0.0    0.0
+     <>                                            Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47007           1    0.0    0.0     0.0    0.0
+ CAF:lvl180_rJBC                                   Options.Applicative.BashCompletion   <no location info>                                           45154           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46992           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46993           0    0.0    0.0     0.0    0.0
+    fmap                                           Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            47010           2    0.0    0.0     0.0    0.0
+     fmap                                          Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    47011           2    0.0    0.0     0.0    0.0
+      fmap                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            47013           2    0.0    0.0     0.0    0.0
+    strOption                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:360:1-22                  46994           1    0.0    0.0     0.0    0.0
+     option                                        Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          46995           1    0.0    0.0     0.0    0.0
+      mkParser                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 47008           1    0.0    0.0     0.0    0.0
+       mkParser.o                                  Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         47009           1    0.0    0.0     0.0    0.0
+        mkOption                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         47012           1    0.0    0.0     0.0    0.0
+      option.(...)                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46997           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 46998           1    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47006           1    0.0    0.0     0.0    0.0
+      option.d                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46996           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47016           1    0.0    0.0     0.0    0.0
+      option.fields                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  47017           1    0.0    0.0     0.0    0.0
+       option.f                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47018           0    0.0    0.0     0.0    0.0
+        option.(...)                               Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47019           0    0.0    0.0     0.0    0.0
+         <>                                        Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47020           0    0.0    0.0     0.0    0.0
+      option.rdr                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  47014           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          47015           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47021           0    0.0    0.0     0.0    0.0
+     fieldMod                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         47023           0    0.0    0.0     0.0    0.0
+      name                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          47024           1    0.0    0.0     0.0    0.0
+       optNames                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          47025           1    0.0    0.0     0.0    0.0
+ CAF:lvl181_rJBD                                   Options.Applicative.BashCompletion   <no location info>                                           45155           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46990           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46991           0    0.0    0.0     0.0    0.0
+ CAF:lvl182_rJBE                                   Options.Applicative.BashCompletion   <no location info>                                           45156           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46954           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46955           0    0.0    0.0     0.0    0.0
+ CAF:lvl183_rJBF                                   Options.Applicative.BashCompletion   <no location info>                                           45157           0    0.0    0.0     0.0    0.0
+  bashCompletionParser                             Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46918           0    0.0    0.0     0.0    0.0
+   bashCompletionParser.complParser                Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46919           0    0.0    0.0     0.0    0.0
+ CAF:lvl24_rc9i                                    Options.Applicative.Types            <no location info>                                           45264           0    0.0    0.0     0.0    0.0
+  manyM                                            Options.Applicative.Types            src/Options/Applicative/Types.hs:(293,1)-(297,30)            46880           0    0.0    0.0     0.0    0.0
+   >>=                                             Options.Applicative.Types            src/Options/Applicative/Types.hs:277:3-64                    46881           0    0.0    0.0     0.0    0.0
+    >>=.\                                          Options.Applicative.Types            src/Options/Applicative/Types.hs:277:37-64                   46882           0    0.0    0.0     0.0    0.0
+     >>=.\.\                                       Options.Applicative.Types            src/Options/Applicative/Types.hs:277:46-63                   46883           0    0.0    0.0     0.0    0.0
+      pure                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:283:3-30                    46885           1    0.0    0.0     0.0    0.0
+ CAF:lvl25_rc9j                                    Options.Applicative.Types            <no location info>                                           45269           0    0.0    0.0     0.0    0.0
+  manyM                                            Options.Applicative.Types            src/Options/Applicative/Types.hs:(293,1)-(297,30)            46866           0    0.0    0.0     0.0    0.0
+ CAF:lvl49_r9io                                    Main                                 <no location info>                                           46486           0    0.0    0.0     0.0    0.0
+  testParser                                       Main                                 app/Main.hs:(23,1)-(28,5)                                    47037           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47038           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47054           1    0.0    0.0     0.0    0.0
+ CAF:lvl58_r9iN                                    Main                                 <no location info>                                           46500           0    0.0    0.0     0.0    0.0
+  testEvaluator                                    Main                                 app/Main.hs:(31,1)-(36,5)                                    47082           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47083           1    0.0    0.0     0.0    0.0
+    <>                                             Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47099           1    0.0    0.0     0.0    0.0
+ CAF:lvl60_r9iP                                    Main                                 <no location info>                                           46502           0    0.0    0.0     0.0    0.0
+  opts                                             Main                                 app/Main.hs:76:1-65                                          47030           0    0.0    0.0     0.0    0.0
+ CAF:lvl61_r9iQ                                    Main                                 <no location info>                                           46503           0    0.0    0.0     0.0    0.0
+  opts                                             Main                                 app/Main.hs:76:1-65                                          47029           0    0.0    0.0     0.0    0.0
+ CAF:lvl63_r9iT                                    Main                                 <no location info>                                           46506           0    0.0    0.0     0.0    0.0
+  optsInfo                                         Main                                 app/Main.hs:(114,1)-(118,5)                                  46572           0    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder          src/Options/Applicative/Builder.hs:386:3-56                  46574           0    0.0    0.0     0.0    0.0
+    fullDesc                                       Options.Applicative.Builder          src/Options/Applicative/Builder.hs:390:1-52                  46579           0    0.0    0.0     0.0    0.0
+     fullDesc.\                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:390:28-52                 46580           1    0.0    0.0     0.0    0.0
+   info                                            Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(454,1)-(463,34)          46573           0    0.0    0.0     0.0    0.0
+ CAF:lvl8_rtjh                                     Options.Applicative.Common           <no location info>                                           45386           0    0.0    0.0     0.0    0.0
+ CAF:main1                                         Main                                 <no location info>                                           46508           0    0.0    0.0     0.0    0.0
+  main                                             Main                                 app/Main.hs:(121,1)-(127,47)                                 46510           1    0.0    0.0     0.0    0.0
+ CAF:option3                                       Options.Applicative.Builder          <no location info>                                           45425           0    0.0    0.0     0.0    0.0
+  option                                           Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          46726           0    0.0    0.0     0.0    0.0
+   option.(...)                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  46727           0    0.0    0.0     0.0    0.0
+    metavar                                        Options.Applicative.Builder          src/Options/Applicative/Builder.hs:206:1-55                  46728           1    0.0    0.0     0.0    0.0
+ CAF:optionMod                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:130:1-9          45392           0    0.0    0.0     0.0    0.0
+  optionMod                                        Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:130:1-25         46654           1    0.0    0.0     0.0    0.0
+ CAF:optsInfo_r4Gi                                 Main                                 app/Main.hs:114:1-8                                          46507           0    0.0    0.0     0.0    0.0
+  optsInfo                                         Main                                 app/Main.hs:(114,1)-(118,5)                                  46555           1    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder          src/Options/Applicative/Builder.hs:386:3-56                  46558           2    0.0    0.0     0.0    0.0
+   header                                          Options.Applicative.Builder          src/Options/Applicative/Builder.hs:398:1-57                  46565           1    0.0    0.0     0.0    0.0
+    header.\                                       Options.Applicative.Builder          src/Options/Applicative/Builder.hs:398:28-57                 46566           1    0.0    0.0     0.0    0.0
+   info                                            Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(454,1)-(463,34)          46556           1    0.0    0.0     0.0    0.0
+    applyInfoMod                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:379:5-16                  46557           1    0.0    0.0     0.0    0.0
+   progDesc                                        Options.Applicative.Builder          src/Options/Applicative/Builder.hs:416:1-61                  46570           1    0.0    0.0     0.0    0.0
+    progDesc.\                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:416:30-61                 46571           1    0.0    0.0     0.0    0.0
+ CAF:opts_r4Gc                                     Main                                 app/Main.hs:76:1-4                                           46504           0    0.0    0.0     0.0    0.0
+  opts                                             Main                                 app/Main.hs:76:1-65                                          47028           1    0.0    0.0     0.0    0.0
+ CAF:readerAsk1                                    Options.Applicative.Types            <no location info>                                           45188           0    0.0    0.0     0.0    0.0
+  readerAsk                                        Options.Applicative.Types            src/Options/Applicative/Types.hs:219:1-21                    47166           1    0.0    0.0     0.0    0.0
+ CAF:spiral                                        Examples                             src/Examples.hs:31:1-6                                       46334           0    0.0    0.0     0.0    0.0
+  spiral                                           Examples                             src/Examples.hs:(31,1)-(32,1087)                             47183           1    0.0    0.0     0.0    0.0
+ CAF:spiral112                                     Examples                             <no location info>                                           46333           0    0.0    0.0     0.0    0.0
+ CAF:spiral97                                      Examples                             <no location info>                                           46332           0    0.0    0.0     0.0    0.0
+ CAF:testEvaluator_r4G8                            Main                                 app/Main.hs:31:1-13                                          46501           0    0.0    0.0     0.0    0.0
+  testEvaluator                                    Main                                 app/Main.hs:(31,1)-(36,5)                                    47076           1    0.0    0.0     0.0    0.0
+   fmap                                            Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            47104           1    0.0    0.0     0.0    0.0
+    fmap                                           Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    47105           1    0.0    0.0     0.0    0.0
+     fmap                                          Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            47107           1    0.0    0.0     0.0    0.0
+      fmap                                         Options.Applicative.Types            src/Options/Applicative/Types.hs:234:3-45                    47149           1    0.0    0.0     0.0    0.0
+       fmap                                        Options.Applicative.Types            src/Options/Applicative/Types.hs:192:3-37                    47160           1    0.0    0.0     0.0    0.0
+   strOption                                       Options.Applicative.Builder          src/Options/Applicative/Builder.hs:360:1-22                  47077           1    0.0    0.0     0.0    0.0
+    option                                         Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          47078           1    0.0    0.0     0.0    0.0
+     mkParser                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 47102           1    0.0    0.0     0.0    0.0
+      mkParser.o                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         47103           1    0.0    0.0     0.0    0.0
+       mkOption                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         47106           1    0.0    0.0     0.0    0.0
+     option.(...)                                  Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47080           1    0.0    0.0     0.0    0.0
+      <>                                           Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47081           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47098           1    0.0    0.0     0.0    0.0
+     option.crdr                                   Options.Applicative.Builder          src/Options/Applicative/Builder.hs:374:5-42                  47150           1    0.0    0.0     0.0    0.0
+     option.d                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47079           1    0.0    0.0     0.0    0.0
+     option.f                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47110           1    0.0    0.0     0.0    0.0
+     option.fields                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  47111           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47112           0    0.0    0.0     0.0    0.0
+       option.(...)                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47113           0    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47114           0    0.0    0.0     0.0    0.0
+     option.rdr                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  47108           1    0.0    0.0     0.0    0.0
+      optNames                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          47109           1    0.0    0.0     0.0    0.0
+    str                                            Options.Applicative.Builder          src/Options/Applicative/Builder.hs:134:1-30                  47162           1    0.0    0.0     0.0    0.0
+     fmap                                          Options.Applicative.Types            src/Options/Applicative/Types.hs:192:3-37                    47163           1    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47115           0    0.0    0.0     0.0    0.0
+    fieldMod                                       Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         47117           0    0.0    0.0     0.0    0.0
+     name                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          47118           2    0.0    0.0     0.0    0.0
+ CAF:testParser_r4G7                               Main                                 app/Main.hs:23:1-10                                          46487           0    0.0    0.0     0.0    0.0
+  testParser                                       Main                                 app/Main.hs:(23,1)-(28,5)                                    47031           1    0.0    0.0     0.0    0.0
+   fmap                                            Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            47059           1    0.0    0.0     0.0    0.0
+    fmap                                           Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    47060           1    0.0    0.0     0.0    0.0
+     fmap                                          Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            47062           1    0.0    0.0     0.0    0.0
+   strOption                                       Options.Applicative.Builder          src/Options/Applicative/Builder.hs:360:1-22                  47032           1    0.0    0.0     0.0    0.0
+    option                                         Options.Applicative.Builder          src/Options/Applicative/Builder.hs:(370,1)-(375,65)          47033           1    0.0    0.0     0.0    0.0
+     mkParser                                      Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(165,1)-(169,36) 47057           1    0.0    0.0     0.0    0.0
+      mkParser.o                                   Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:167:5-34         47058           1    0.0    0.0     0.0    0.0
+       mkOption                                    Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:175:1-43         47061           1    0.0    0.0     0.0    0.0
+     option.(...)                                  Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47035           1    0.0    0.0     0.0    0.0
+      <>                                           Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47036           1    0.0    0.0     0.0    0.0
+       <>                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(97,3)-(98,47)   47053           1    0.0    0.0     0.0    0.0
+     option.d                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47034           1    0.0    0.0     0.0    0.0
+     option.f                                      Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47065           1    0.0    0.0     0.0    0.0
+     option.fields                                 Options.Applicative.Builder          src/Options/Applicative/Builder.hs:373:5-55                  47066           1    0.0    0.0     0.0    0.0
+      option.f                                     Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47067           0    0.0    0.0     0.0    0.0
+       option.(...)                                Options.Applicative.Builder          src/Options/Applicative/Builder.hs:372:5-41                  47068           0    0.0    0.0     0.0    0.0
+        <>                                         Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47069           0    0.0    0.0     0.0    0.0
+     option.rdr                                    Options.Applicative.Builder          src/Options/Applicative/Builder.hs:375:5-65                  47063           1    0.0    0.0     0.0    0.0
+      optNames                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          47064           1    0.0    0.0     0.0    0.0
+   <>                                              Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:(141,3)-(142,40) 47070           0    0.0    0.0     0.0    0.0
+    fieldMod                                       Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:133:1-28         47072           0    0.0    0.0     0.0    0.0
+     name                                          Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:55:3-59          47073           2    0.0    0.0     0.0    0.0
+      optNames                                     Options.Applicative.Builder.Internal src/Options/Applicative/Builder/Internal.hs:36:5-12          47075           2    0.0    0.0     0.0    0.0
+ main                                              Main                                 app/Main.hs:(121,1)-(127,47)                                 46511           0    0.0    0.0    99.9  100.0
+  runEvaluator                                     Main                                 app/Main.hs:(89,1)-(94,75)                                   47181           1    0.0    0.0    99.9  100.0
+   eval                                            Interp                               src/Interp.hs:(137,1)-(140,25)                               47215           1    0.0    0.0    99.9  100.0
+    eval.(...)                                     Interp                               src/Interp.hs:139:5-39                                       47218           1    0.0    0.0    99.9  100.0
+     evalExpr                                      Interp                               src/Interp.hs:(83,1)-(133,32)                                47219    24752837   42.8   31.1    99.9  100.0
+      evalExpr.(...)                               Interp                               src/Interp.hs:124:5-30                                       47260     4641156    2.6    7.1     2.6    7.1
+      evalExpr.state                               Interp                               src/Interp.hs:124:5-30                                       47268     4641156    0.0    0.0     0.0    0.0
+      evalBinOp                                    Interp                               src/Interp.hs:(30,1)-(48,36)                                 47237     3094105    3.4    4.5     3.4    4.5
+      evalExpr.(...)                               Interp                               src/Interp.hs:132:5-32                                       47235     3094105    2.0    5.2     2.0    5.2
+      evalExpr.(...)                               Interp                               src/Interp.hs:133:5-32                                       47233     3094105    2.6    3.7     2.6    3.7
+      evalExpr.(...)                               Interp                               src/Interp.hs:(97,5)-(99,45)                                 47231     3094105    5.4    8.2     5.4    8.2
+       ==                                          Ast                                  src/Ast.hs:60:15-16                                          47232     3094105    0.0    0.0     0.0    0.0
+      evalExpr.value1                              Interp                               src/Interp.hs:132:5-32                                       47236     3094105    0.0    0.0     0.0    0.0
+      evalExpr.value2                              Interp                               src/Interp.hs:133:5-32                                       47234     3094105    0.0    0.0     0.0    0.0
+      lookupVar                                    Interp                               src/Interp.hs:(62,1)-(66,50)                                 47238     3094105    1.2    0.0    12.7    1.5
+       lookupVar.mvalue                            Interp                               src/Interp.hs:66:21-50                                       47239     3094105   11.1    1.5    11.5    1.5
+        env                                        Interp                               src/Interp.hs:14:5-7                                         47240     3094105    0.4    0.0     0.4    0.0
+      evalExpr.(...)                               Interp                               src/Interp.hs:89:5-108                                       47241     1547053    1.0    1.1     5.4   12.0
+       evalExpr.(...).\                            Interp                               src/Interp.hs:89:43-93                                       47242     1547052    3.6    7.5     4.4   10.9
+        evalExpr.(...).\.(...)                     Interp                               src/Interp.hs:89:47-71                                       47244     1547052    0.7    3.4     0.7    3.4
+        evalExpr.(...).\.newS                      Interp                               src/Interp.hs:89:47-71                                       47243     1547052    0.1    0.0     0.1    0.0
+        evalExpr.(...).\.v                         Interp                               src/Interp.hs:89:47-71                                       47259           1    0.0    0.0     0.0    0.0
+      evalExpr.(...)                               Interp                               src/Interp.hs:93:5-39                                        47229     1547053    1.1    1.1     1.1    1.1
+      evalExpr.(...)                               Interp                               src/Interp.hs:88:5-42                                        47221     1547053    0.5    0.0     7.4    0.7
+       lookupDef                                   Interp                               src/Interp.hs:(69,1)-(73,44)                                 47222     1547053    0.6    0.0     6.9    0.7
+        lookupDef.definition                       Interp                               src/Interp.hs:(70,5)-(72,59)                                 47227     1547053    0.2    0.0     0.2    0.0
+        lookupDef.mdef                             Interp                               src/Interp.hs:73:5-44                                        47223     1547053    6.0    0.7     6.0    0.7
+         definitions                               Interp                               src/Interp.hs:15:5-15                                        47224     1547053    0.0    0.0     0.0    0.0
+      evalExpr.body                                Interp                               src/Interp.hs:88:5-42                                        47228     1547053    0.0    0.0     0.0    0.0
+      evalExpr.vRes                                Interp                               src/Interp.hs:93:5-39                                        47220     1547053    0.1    0.0     0.1    0.0
+      evalExpr.value                               Interp                               src/Interp.hs:(97,5)-(99,45)                                 47230     1547053    0.0    0.0     0.0    0.0
+      evalExpr.boundSt                             Interp                               src/Interp.hs:91:5-47                                        47250     1547052    1.1    1.5     7.6   11.2
+       bindValues                                  Interp                               src/Interp.hs:(76,1)-(79,49)                                 47251     3094104    1.5    1.9     6.5    9.7
+        bindValues.inState                         Interp                               src/Interp.hs:78:5-36                                        47252     1547052    1.0    1.5     4.1    6.4
+         bind                                      Interp                               src/Interp.hs:(57,1)-(59,34)                                 47253     1547052    1.2    0.0     3.2    4.9
+          bind.envi                                Interp                               src/Interp.hs:58:5-17                                        47256     1547052    0.6    0.0     0.6    0.0
+           env                                     Interp                               src/Interp.hs:14:5-7                                         47257     1547052    0.0    0.0     0.0    0.0
+          bind.newEnv                              Interp                               src/Interp.hs:59:5-34                                        47258     1547052    1.3    4.9     1.3    4.9
+        bindValues.newState                        Interp                               src/Interp.hs:79:5-49                                        47254     1547052    0.9    1.5     0.9    1.5
+      evalExpr.defSt                               Interp                               src/Interp.hs:92:5-39                                        47246     1547052    0.7    0.0     0.9    0.0
+       env                                         Interp                               src/Interp.hs:14:5-7                                         47255     1547052    0.2    0.0     0.2    0.0
+      evalExpr.params                              Interp                               src/Interp.hs:88:5-42                                        47248     1547052    0.0    0.0     0.0    0.0
+      evalExpr.state                               Interp                               src/Interp.hs:118:5-46                                       47266     1547052    0.4    0.7     1.5    3.7
+       addInstruction                              Interp                               src/Interp.hs:(52,1)-(54,34)                                 47267     1547052    1.1    3.0     1.1    3.0
+      evalExpr.state                               Interp                               src/Interp.hs:(97,5)-(99,45)                                 47265     1547052    0.2    0.0     0.2    0.0
+      evalExpr.state                               Interp                               src/Interp.hs:102:5-46                                       47263     1547052    0.3    0.7     1.8    3.7
+       addInstruction                              Interp                               src/Interp.hs:(52,1)-(54,34)                                 47264     1547052    1.5    3.0     1.5    3.0
+      evalExpr.state                               Interp                               src/Interp.hs:107:5-48                                       47261     1547052    0.4    0.7     1.4    3.7
+       addInstruction                              Interp                               src/Interp.hs:(52,1)-(54,34)                                 47262     1547052    1.0    3.0     1.0    3.0
+      evalExpr.state                               Interp                               src/Interp.hs:89:5-108                                       47245     1547052    0.0    0.0     0.0    0.0
+      evalExpr.values                              Interp                               src/Interp.hs:89:5-108                                       47249     1547052    0.0    0.0     0.0    0.0
+      evalExpr.variables                           Interp                               src/Interp.hs:90:5-44                                        47247     1547052    1.2    2.2     1.2    2.2
+    eval.finalValue                                Interp                               src/Interp.hs:139:5-39                                       47217           1    0.0    0.0     0.0    0.0
+    eval.st                                        Interp                               src/Interp.hs:140:5-25                                       47225           1    0.0    0.0     0.0    0.0
+     emptyState                                    Interp                               src/Interp.hs:21:1-72                                        47226           1    0.0    0.0     0.0    0.0
+   showsPrec                                       Ast                                  src/Ast.hs:60:19-22                                          47216           1    0.0    0.0     0.0    0.0
+   typecheck                                       Typecheck                            src/Typecheck.hs:(197,1)-(201,30)                            47184           1    0.0    0.0     0.0    0.0
+    typecheck.st                                   Typecheck                            src/Typecheck.hs:198:9-25                                    47205           1    0.0    0.0     0.0    0.0
+     emptySt                                       Typecheck                            src/Typecheck.hs:71:1-28                                     47207           0    0.0    0.0     0.0    0.0
+      mkState                                      Typecheck                            src/Typecheck.hs:68:1-87                                     47208           1    0.0    0.0     0.0    0.0
+    typecheckProg                                  Typecheck                            src/Typecheck.hs:(190,1)-(191,71)                            47185           1    0.0    0.0     0.0    0.0
+     typecheckExpr                                 Typecheck                            src/Typecheck.hs:(125,1)-(178,64)                            47210           2    0.0    0.0     0.0    0.0
+      check                                        Typecheck                            src/Typecheck.hs:(101,1)-(106,41)                            47213           1    0.0    0.0     0.0    0.0
+       ==                                          Ast                                  src/Ast.hs:24:15-16                                          47214           1    0.0    0.0     0.0    0.0
+      lookupDef                                    Typecheck                            src/Typecheck.hs:(82,1)-(86,46)                              47211           1    0.0    0.0     0.0    0.0
+       definitions                                 Typecheck                            src/Typecheck.hs:64:5-15                                     47212           1    0.0    0.0     0.0    0.0
+     typecheckDef                                  Typecheck                            src/Typecheck.hs:(183,1)-(186,39)                            47186           1    0.0    0.0     0.0    0.0
+      check                                        Typecheck                            src/Typecheck.hs:(101,1)-(106,41)                            47187          12    0.0    0.0     0.0    0.0
+       typecheckExpr                               Typecheck                            src/Typecheck.hs:(125,1)-(178,64)                            47188          27    0.0    0.0     0.0    0.0
+        ==                                         Ast                                  src/Ast.hs:24:15-16                                          47198          17    0.0    0.0     0.0    0.0
+        lookupVar                                  Typecheck                            src/Typecheck.hs:(89,1)-(93,43)                              47193           5    0.0    0.0     0.0    0.0
+         env                                       Typecheck                            src/Typecheck.hs:60:5-7                                      47194           5    0.0    0.0     0.0    0.0
+        isIntOp                                    Typecheck                            src/Typecheck.hs:109:1-43                                    47189           4    0.0    0.0     0.0    0.0
+         ==                                        Ast                                  src/Ast.hs:48:15-16                                          47190           7    0.0    0.0     0.0    0.0
+        isBoolOp                                   Typecheck                            src/Typecheck.hs:112:1-33                                    47191           3    0.0    0.0     0.0    0.0
+         ==                                        Ast                                  src/Ast.hs:48:15-16                                          47192           6    0.0    0.0     0.0    0.0
+        opReturnType                               Typecheck                            src/Typecheck.hs:(115,1)-(117,24)                            47199           3    0.0    0.0     0.0    0.0
+         isIntOp                                   Typecheck                            src/Typecheck.hs:109:1-43                                    47200           3    0.0    0.0     0.0    0.0
+          ==                                       Ast                                  src/Ast.hs:48:15-16                                          47201          12    0.0    0.0     0.0    0.0
+        lookupDef                                  Typecheck                            src/Typecheck.hs:(82,1)-(86,46)                              47202           1    0.0    0.0     0.0    0.0
+         definitions                               Typecheck                            src/Typecheck.hs:64:5-15                                     47203           1    0.0    0.0     0.0    0.0
+       ==                                          Ast                                  src/Ast.hs:24:15-16                                          47209           1    0.0    0.0     0.0    0.0
+      definitions                                  Typecheck                            src/Typecheck.hs:64:5-15                                     47204           1    0.0    0.0     0.0    0.0
+      typecheckDef.\                               Typecheck                            src/Typecheck.hs:186:18-19                                   47195           1    0.0    0.0     0.0    0.0
+      typecheckDef.st                              Typecheck                            src/Typecheck.hs:185:9-44                                    47196           1    0.0    0.0     0.0    0.0
+       mkState                                     Typecheck                            src/Typecheck.hs:68:1-87                                     47197           1    0.0    0.0     0.0    0.0
+  execParser                                       Options.Applicative.Extra            src/Options/Applicative/Extra.hs:84:1-42                     46513           0    0.0    0.0     0.0    0.0
+   customExecParser                                Options.Applicative.Extra            src/Options/Applicative/Extra.hs:(88,1)-(90,23)              46514           1    0.0    0.0     0.0    0.0
+    execParserPure                                 Options.Applicative.Extra            src/Options/Applicative/Extra.hs:(124,1)-(133,33)            46515           1    0.0    0.0     0.0    0.0
+     runP                                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:91:1-59                  46516           1    0.0    0.0     0.0    0.0
+      execParserPure.p                             Options.Applicative.Extra            src/Options/Applicative/Extra.hs:133:5-33                    46517           1    0.0    0.0     0.0    0.0
+       runParserInfo                               Options.Applicative.Common           src/Options/Applicative/Common.hs:233:1-62                   46518           1    0.0    0.0     0.0    0.0
+        infoParser                                 Options.Applicative.Types            src/Options/Applicative/Types.hs:90:5-14                     46588           1    0.0    0.0     0.0    0.0
+        infoPolicy                                 Options.Applicative.Types            src/Options/Applicative/Types.hs:97:5-14                     46553           1    0.0    0.0     0.0    0.0
+        runParserFully                             Options.Applicative.Common           src/Options/Applicative/Common.hs:(236,1)-(240,33)           46519           1    0.0    0.0     0.0    0.0
+         >>=                                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:64:3-50                  46520          78    0.0    0.0     0.0    0.0
+          >>=.\                                    Options.Applicative.Internal         src/Options/Applicative/Internal.hs:64:31-50                 46530          80    0.0    0.0     0.0    0.0
+           pure                                    Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  47179           1    0.0    0.0     0.0    0.0
+           runParser                               Options.Applicative.Common           src/Options/Applicative/Common.hs:(203,1)-(220,24)           46531           1    0.0    0.0     0.0    0.0
+            exitP                                  Options.Applicative.Internal         src/Options/Applicative/Internal.hs:81:3-75                  47176           1    0.0    0.0     0.0    0.0
+            runParser.result                       Options.Applicative.Common           src/Options/Applicative/Common.hs:(213,5)-(214,40)           47177           1    0.0    0.0     0.0    0.0
+             evalParser                            Options.Applicative.Common           src/Options/Applicative/Common.hs:(245,1)-(249,56)           47178           1    0.0    0.0     0.0    0.0
+            runParser.do_step                      Options.Applicative.Common           src/Options/Applicative/Common.hs:(215,5)-(216,28)           46532           0    0.0    0.0     0.0    0.0
+             pure                                  Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  47171           6    0.0    0.0     0.0    0.0
+             runParserStep                         Options.Applicative.Common           src/Options/Applicative/Common.hs:(223,1)-(227,35)           46533           0    0.0    0.0     0.0    0.0
+              disamb                               Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(258,1)-(265,18)         46534           1    0.0    0.0     0.0    0.0
+               runListT                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(183,1)-(187,43)         46535           2    0.0    0.0     0.0    0.0
+                stepListT                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46536           2    0.0    0.0     0.0    0.0
+                takeListT                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(179,1)-(180,75)         46549           0    0.0    0.0     0.0    0.0
+                 mzero                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 47175           0    0.0    0.0     0.0    0.0
+               runNondetT                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:224:5-14                 46551           1    0.0    0.0     0.0    0.0
+               takeListT                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(179,1)-(180,75)         46548           0    0.0    0.0     0.0    0.0
+                bimapTStep                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(172,1)-(173,46)         47172           1    0.0    0.0     0.0    0.0
+                stepListT                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46550           1    0.0    0.0     0.0    0.0
+                stepParser                         Options.Applicative.Common           src/Options/Applicative/Common.hs:(189,1)-(196,35)           46599           0    0.0    0.0     0.0    0.0
+                 pure                              Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  46698          58    0.0    0.0     0.0    0.0
+                 mzero                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46695           0    0.0    0.0     0.0    0.0
+                  pure                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  46697           9    0.0    0.0     0.0    0.0
+                 searchOpt                         Options.Applicative.Common           src/Options/Applicative/Common.hs:(156,1)-(161,20)           46600           0    0.0    0.0     0.0    0.0
+                  searchOpt.\                      Options.Applicative.Common           src/Options/Applicative/Common.hs:(156,45)-(161,20)          47125           0    0.0    0.0     0.0    0.0
+                   lift                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:246:3-30                 47126           0    0.0    0.0     0.0    0.0
+                    lift                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:211:3-38                 47127           0    0.0    0.0     0.0    0.0
+                  searchParser                     Options.Applicative.Common           src/Options/Applicative/Common.hs:(137,1)-(152,40)           46601           0    0.0    0.0     0.0    0.0
+                   <!>                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(249,1)-(252,15)         46622           0    0.0    0.0     0.0    0.0
+                    >>=                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(200,3)-(204,54)         46701          12    0.0    0.0     0.0    0.0
+                     stepListT                     Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46705          20    0.0    0.0     0.0    0.0
+                     mplus                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(215,3)-(219,52)         46706           8    0.0    0.0     0.0    0.0
+                      stepListT                    Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46707          16    0.0    0.0     0.0    0.0
+                      >>=                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:235:3-52                 46719           0    0.0    0.0     0.0    0.0
+                     pure                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:195:3-25                 46714           0    0.0    0.0     0.0    0.0
+                      hoistList                    Options.Applicative.Internal         src/Options/Applicative/Internal.hs:176:1-62                 46715           0    0.0    0.0     0.0    0.0
+                       hoistList.\                 Options.Applicative.Internal         src/Options/Applicative/Internal.hs:176:29-55                46716           0    0.0    0.0     0.0    0.0
+                    lift                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:211:3-38                 46704           0    0.0    0.0     0.0    0.0
+                     mzero                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46778           0    0.0    0.0     0.0    0.0
+                    mplus                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(215,3)-(219,52)         46623           0    0.0    0.0     0.0    0.0
+                     stepListT                     Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46699           4    0.0    0.0     0.0    0.0
+                     >>=                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:235:3-52                 46624           0    0.0    0.0     0.0    0.0
+                      >>=                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(200,3)-(204,54)         46625           0    0.0    0.0     0.0    0.0
+                    pure                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:195:3-25                 46711           0    0.0    0.0     0.0    0.0
+                     hoistList                     Options.Applicative.Internal         src/Options/Applicative/Internal.hs:176:1-62                 46712           0    0.0    0.0     0.0    0.0
+                      mzero                        Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46776           0    0.0    0.0     0.0    0.0
+                   <|>                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:243:3-15                 46602           0    0.0    0.0     0.0    0.0
+                    mplus                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:239:3-57                 46603           0    0.0    0.0     0.0    0.0
+                     mplus                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(215,3)-(219,52)         46604           0    0.0    0.0     0.0    0.0
+                      stepListT                    Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46763          20    0.0    0.0     0.0    0.0
+                      >>=                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:235:3-52                 46830           0    0.0    0.0     0.0    0.0
+                       >>=                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(200,3)-(204,54)         46831           0    0.0    0.0     0.0    0.0
+                      searchOpt.\                  Options.Applicative.Common           src/Options/Applicative/Common.hs:(156,45)-(161,20)          46761           0    0.0    0.0     0.0    0.0
+                       lift                        Options.Applicative.Internal         src/Options/Applicative/Internal.hs:246:3-30                 47124           0    0.0    0.0     0.0    0.0
+                       mzero                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:238:3-23                 46762           0    0.0    0.0     0.0    0.0
+                   >>=                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:235:3-52                 46626           0    0.0    0.0     0.0    0.0
+                    >>=                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(200,3)-(204,54)         46630           0    0.0    0.0     0.0    0.0
+                     <!>                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(249,1)-(252,15)         46631           0    0.0    0.0     0.0    0.0
+                      mplus                        Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(215,3)-(219,52)         46632           0    0.0    0.0     0.0    0.0
+                     <|>                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:243:3-15                 46638           0    0.0    0.0     0.0    0.0
+                      mplus                        Options.Applicative.Internal         src/Options/Applicative/Internal.hs:239:3-57                 46639           0    0.0    0.0     0.0    0.0
+                       mplus                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(215,3)-(219,52)         46640           0    0.0    0.0     0.0    0.0
+                     searchOpt.\                   Options.Applicative.Common           src/Options/Applicative/Common.hs:(156,45)-(161,20)          46693           0    0.0    0.0     0.0    0.0
+                      mzero                        Options.Applicative.Internal         src/Options/Applicative/Internal.hs:238:3-23                 46694           0    0.0    0.0     0.0    0.0
+                   empty                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:242:3-15                 46772           0    0.0    0.0     0.0    0.0
+                    mzero                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:238:3-23                 46773           0    0.0    0.0     0.0    0.0
+                     mzero                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46774           0    0.0    0.0     0.0    0.0
+                   mzero                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:238:3-23                 46767           0    0.0    0.0     0.0    0.0
+                    mzero                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46768           0    0.0    0.0     0.0    0.0
+                   searchOpt.\                     Options.Applicative.Common           src/Options/Applicative/Common.hs:(156,45)-(161,20)          47128           0    0.0    0.0     0.0    0.0
+                    fmap                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:52:3-29                  47130           1    0.0    0.0     0.0    0.0
+                     optMatches                    Options.Applicative.Common           src/Options/Applicative/Common.hs:(84,1)-(113,26)            47132           0    0.0    0.0     0.0    0.0
+                      pure                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  47134           0    0.0    0.0     0.0    0.0
+                    lift                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:246:3-30                 47129           0    0.0    0.0     0.0    0.0
+                    optMatches                     Options.Applicative.Common           src/Options/Applicative/Common.hs:(84,1)-(113,26)            47131           0    0.0    0.0     0.0    0.0
+                     pure                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  47133           1    0.0    0.0     0.0    0.0
+                     runReadM                      Options.Applicative.Internal         src/Options/Applicative/Internal.hs:98:1-63                  47168           0    0.0    0.0     0.0    0.0
+                      hoistEither                  Options.Applicative.Internal         src/Options/Applicative/Internal.hs:88:1-34                  47169           0    0.0    0.0     0.0    0.0
+                       pure                        Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  47170           0    0.0    0.0     0.0    0.0
+              prefDisambiguate                     Options.Applicative.Types            src/Options/Applicative/Types.hs:113:5-20                    46537           1    0.0    0.0     0.0    0.0
+              stepParser                           Options.Applicative.Common           src/Options/Applicative/Common.hs:(189,1)-(196,35)           46552           1    0.0    0.0     0.0    0.0
+               searchOpt                           Options.Applicative.Common           src/Options/Applicative/Common.hs:(156,1)-(161,20)           46586           1    0.0    0.0     0.0    0.0
+                searchParser                       Options.Applicative.Common           src/Options/Applicative/Common.hs:(137,1)-(152,40)           46587          33    0.0    0.0     0.0    0.0
+                 <|>                               Options.Applicative.Internal         src/Options/Applicative/Internal.hs:243:3-15                 46590          13    0.0    0.0     0.0    0.0
+                  mplus                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:239:3-57                 46591          24    0.0    0.0     0.0    0.0
+                   mplus                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(215,3)-(219,52)         46592          24    0.0    0.0     0.0    0.0
+                    stepListT                      Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46605          24    0.0    0.0     0.0    0.0
+                    <!>                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(249,1)-(252,15)         46613           0    0.0    0.0     0.0    0.0
+                 searchOpt.\                       Options.Applicative.Common           src/Options/Applicative/Common.hs:(156,45)-(161,20)          46661          10    0.0    0.0     0.0    0.0
+                  optMain                          Options.Applicative.Types            src/Options/Applicative/Types.hs:171:5-11                    46663          10    0.0    0.0     0.0    0.0
+                  optMatches                       Options.Applicative.Common           src/Options/Applicative/Common.hs:(84,1)-(113,26)            46662          10    0.0    0.0     0.0    0.0
+                   optMatches.has_name             Options.Applicative.Common           src/Options/Applicative/Common.hs:(111,5)-(113,26)           46681          10    0.0    0.0     0.0    0.0
+                    ==                             Options.Applicative.Types            src/Options/Applicative/Types.hs:133:13-14                   46685          11    0.0    0.0     0.0    0.0
+                   pure                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  47138           3    0.0    0.0     0.0    0.0
+                   crReader                        Options.Applicative.Types            src/Options/Applicative/Types.hs:231:5-12                    47147           1    0.0    0.0     0.0    0.0
+                   optMatches.mb_args              Options.Applicative.Common           src/Options/Applicative/Common.hs:89:11-52                   47135           1    0.0    0.0     0.0    0.0
+                    uncons                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(94,1)-(95,30)           47136           1    0.0    0.0     0.0    0.0
+                   runReadM                        Options.Applicative.Internal         src/Options/Applicative/Internal.hs:98:1-63                  47139           1    0.0    0.0     0.0    0.0
+                    hoistEither                    Options.Applicative.Internal         src/Options/Applicative/Internal.hs:88:1-34                  47143           0    0.0    0.0     0.0    0.0
+                     pure                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:55:3-21                  47167           1    0.0    0.0     0.0    0.0
+                    withReadM                      Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(101,1)-(104,12)         47145           0    0.0    0.0     0.0    0.0
+                     crReader                      Options.Applicative.Types            src/Options/Applicative/Types.hs:231:5-12                    47153           0    0.0    0.0     0.0    0.0
+                      execParserPure.pinfo'        Options.Applicative.Extra            src/Options/Applicative/Extra.hs:(130,5)-(132,51)            47154           0    0.0    0.0     0.0    0.0
+                       fmap                        Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            47155           0    0.0    0.0     0.0    0.0
+                        fmap                       Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    47156           0    0.0    0.0     0.0    0.0
+                         fmap                      Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            47157           0    0.0    0.0     0.0    0.0
+                          fmap                     Options.Applicative.Types            src/Options/Applicative/Types.hs:234:3-45                    47158           0    0.0    0.0     0.0    0.0
+                           fmap                    Options.Applicative.Types            src/Options/Applicative/Types.hs:192:3-37                    47159           0    0.0    0.0     0.0    0.0
+                            testEvaluator          Main                                 app/Main.hs:(31,1)-(36,5)                                    47161           0    0.0    0.0     0.0    0.0
+                             strOption             Options.Applicative.Builder          src/Options/Applicative/Builder.hs:360:1-22                  47164           0    0.0    0.0     0.0    0.0
+                              str                  Options.Applicative.Builder          src/Options/Applicative/Builder.hs:134:1-30                  47165           0    0.0    0.0     0.0    0.0
+                   withReadM                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(101,1)-(104,12)         47144           1    0.0    0.0     0.0    0.0
+                    unReadM                        Options.Applicative.Types            src/Options/Applicative/Types.hs:189:5-11                    47146           1    0.0    0.0     0.0    0.0
+                  searchOpt.\.disambiguate         Options.Applicative.Common           src/Options/Applicative/Common.hs:(157,7)-(158,49)           46682          10    0.0    0.0     0.0    0.0
+                   prefDisambiguate                Options.Applicative.Types            src/Options/Applicative/Types.hs:113:5-20                    46683          10    0.0    0.0     0.0    0.0
+                  lift                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:246:3-30                 47121           0    0.0    0.0     0.0    0.0
+                 >>=                               Options.Applicative.Internal         src/Options/Applicative/Internal.hs:235:3-52                 46616           9    0.0    0.0     0.0    0.0
+                  >>=                              Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(200,3)-(204,54)         46617           9    0.0    0.0     0.0    0.0
+                   stepListT                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46627           9    0.0    0.0     0.0    0.0
+                 empty                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:242:3-15                 46769           9    0.0    0.0     0.0    0.0
+                  mzero                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:238:3-23                 46770           9    0.0    0.0     0.0    0.0
+                   mzero                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46771           9    0.0    0.0     0.0    0.0
+                 mzero                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:238:3-23                 46765           6    0.0    0.0     0.0    0.0
+                  mzero                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46766           6    0.0    0.0     0.0    0.0
+                 <!>                               Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(249,1)-(252,15)         46611           4    0.0    0.0     0.0    0.0
+                  runNondetT                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:224:5-14                 46615           8    0.0    0.0     0.0    0.0
+                  >>=                              Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(200,3)-(204,54)         46700           4    0.0    0.0     0.0    0.0
+                   stepListT                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46702           4    0.0    0.0     0.0    0.0
+                  lift                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:211:3-38                 46703           4    0.0    0.0     0.0    0.0
+                   mzero                           Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46777           4    0.0    0.0     0.0    0.0
+                  mplus                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(215,3)-(219,52)         46612           4    0.0    0.0     0.0    0.0
+                   stepListT                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:165:5-13                 46614           4    0.0    0.0     0.0    0.0
+                  pure                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:195:3-25                 46708           4    0.0    0.0     0.0    0.0
+                   hoistList                       Options.Applicative.Internal         src/Options/Applicative/Internal.hs:176:1-62                 46709           4    0.0    0.0     0.0    0.0
+                    hoistList.\                    Options.Applicative.Internal         src/Options/Applicative/Internal.hs:176:29-55                46710           4    0.0    0.0     0.0    0.0
+                    mzero                          Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46775           4    0.0    0.0     0.0    0.0
+                 evalParser                        Options.Applicative.Common           src/Options/Applicative/Common.hs:(245,1)-(249,56)           46867           3    0.0    0.0     0.0    0.0
+                 bashCompletionParser              Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46869           0    0.0    0.0     0.0    0.0
+                  bashCompletionParser.complParser Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46870           0    0.0    0.0     0.0    0.0
+                   many                            Options.Applicative.Types            src/Options/Applicative/Types.hs:305:3-22                    46871           0    0.0    0.0     0.0    0.0
+                    fromM                          Options.Applicative.Types            src/Options/Applicative/Types.hs:287:1-26                    46872           0    0.0    0.0     0.0    0.0
+                     manyM                         Options.Applicative.Types            src/Options/Applicative/Types.hs:(293,1)-(297,30)            46873           0    0.0    0.0     0.0    0.0
+                      >>=                          Options.Applicative.Types            src/Options/Applicative/Types.hs:277:3-64                    46875           0    0.0    0.0     0.0    0.0
+                       >>=.\                       Options.Applicative.Types            src/Options/Applicative/Types.hs:277:37-64                   46876           0    0.0    0.0     0.0    0.0
+                        >>=.\.\                    Options.Applicative.Types            src/Options/Applicative/Types.hs:277:46-63                   46877           1    0.0    0.0     0.0    0.0
+                         runParserM                Options.Applicative.Types            src/Options/Applicative/Types.hs:273:5-14                    46878           1    0.0    0.0     0.0    0.0
+                      oneM                         Options.Applicative.Types            src/Options/Applicative/Types.hs:290:1-26                    46874           0    0.0    0.0     0.0    0.0
+                searchOpt.\                        Options.Applicative.Common           src/Options/Applicative/Common.hs:(156,45)-(161,20)          46687           0    0.0    0.0     0.0    0.0
+                 lift                              Options.Applicative.Internal         src/Options/Applicative/Internal.hs:246:3-30                 47120           1    0.0    0.0     0.0    0.0
+                  lift                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:211:3-38                 47122           1    0.0    0.0     0.0    0.0
+                 mzero                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:238:3-23                 46688           1    0.0    0.0     0.0    0.0
+                  mzero                            Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 46689           1    0.0    0.0     0.0    0.0
+                 optMatches                        Options.Applicative.Common           src/Options/Applicative/Common.hs:(84,1)-(113,26)            47140           0    0.0    0.0     0.0    0.0
+                  runReadM                         Options.Applicative.Internal         src/Options/Applicative/Internal.hs:98:1-63                  47141           0    0.0    0.0     0.0    0.0
+                   hoistEither                     Options.Applicative.Internal         src/Options/Applicative/Internal.hs:88:1-34                  47142           1    0.0    0.0     0.0    0.0
+          runParser                                Options.Applicative.Common           src/Options/Applicative/Common.hs:(203,1)-(220,24)           46523           0    0.0    0.0     0.0    0.0
+           runParser.do_step                       Options.Applicative.Common           src/Options/Applicative/Common.hs:(215,5)-(216,28)           46527           0    0.0    0.0     0.0    0.0
+            runParserStep                          Options.Applicative.Common           src/Options/Applicative/Common.hs:(223,1)-(227,35)           46528           0    0.0    0.0     0.0    0.0
+         runParser                                 Options.Applicative.Common           src/Options/Applicative/Common.hs:(203,1)-(220,24)           46521           1    0.0    0.0     0.0    0.0
+          >>=                                      Options.Applicative.Internal         src/Options/Applicative/Internal.hs:64:3-50                  46522           1    0.0    0.0     0.0    0.0
+          runParser.do_step                        Options.Applicative.Common           src/Options/Applicative/Common.hs:(215,5)-(216,28)           46524           1    0.0    0.0     0.0    0.0
+           runParserStep                           Options.Applicative.Common           src/Options/Applicative/Common.hs:(223,1)-(227,35)           46525           1    0.0    0.0     0.0    0.0
+            >>=                                    Options.Applicative.Internal         src/Options/Applicative/Internal.hs:64:3-50                  46526           1    0.0    0.0     0.0    0.0
+            disamb                                 Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(258,1)-(265,18)         46546           0    0.0    0.0     0.0    0.0
+             takeListT                             Options.Applicative.Internal         src/Options/Applicative/Internal.hs:(179,1)-(180,75)         46547           2    0.0    0.0     0.0    0.0
+              mzero                                Options.Applicative.Internal         src/Options/Applicative/Internal.hs:214:3-29                 47173           1    0.0    0.0     0.0    0.0
+            stepParser                             Options.Applicative.Common           src/Options/Applicative/Common.hs:(189,1)-(196,35)           46584           0    0.0    0.0     0.0    0.0
+             parseWord                             Options.Applicative.Common           src/Options/Applicative/Common.hs:(122,1)-(132,21)           46585           1    0.0    0.0     0.0    0.0
+              parseWord.arg                        Options.Applicative.Common           src/Options/Applicative/Common.hs:130:5-41                   47137           1    0.0    0.0     0.0    0.0
+      execParserPure.pinfo'                        Options.Applicative.Extra            src/Options/Applicative/Extra.hs:(130,5)-(132,51)            46554           1    0.0    0.0     0.0    0.0
+       fmap                                        Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            46608          20    0.0    0.0     0.0    0.0
+        fmap                                       Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    46664           6    0.0    0.0     0.0    0.0
+         fmap                                      Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            46667           6    0.0    0.0     0.0    0.0
+          fmap                                     Options.Applicative.Types            src/Options/Applicative/Types.hs:234:3-45                    47148           1    0.0    0.0     0.0    0.0
+           fmap                                    Options.Applicative.Types            src/Options/Applicative/Types.hs:192:3-37                    47151           1    0.0    0.0     0.0    0.0
+       bashCompletionParser                        Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(35,1)-(65,7)      46606           1    0.0    0.0     0.0    0.0
+        bashCompletionParser.complParser           Options.Applicative.BashCompletion   src/Options/Applicative/BashCompletion.hs:(40,5)-(65,7)      46607           1    0.0    0.0     0.0    0.0
+         fmap                                      Options.Applicative.Types            src/Options/Applicative/Types.hs:(262,3)-(266,43)            46610          12    0.0    0.0     0.0    0.0
+          fmap                                     Options.Applicative.Types            src/Options/Applicative/Types.hs:185:3-43                    46665           2    0.0    0.0     0.0    0.0
+           fmap                                    Options.Applicative.Types            src/Options/Applicative/Types.hs:(248,3)-(251,66)            46668           2    0.0    0.0     0.0    0.0
+       infoParser                                  Options.Applicative.Types            src/Options/Applicative/Types.hs:90:5-14                     47027           1    0.0    0.0     0.0    0.0
+    handleParseResult                              Options.Applicative.Extra            src/Options/Applicative/Extra.hs:(94,1)-(106,17)             47180           1    0.0    0.0     0.0    0.0
